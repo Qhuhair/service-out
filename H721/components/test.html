@@ -1,0 +1,120 @@
+<html>
+    <link rel="stylesheet" href="test.css">
+    <body>
+        <div id="banners">
+            <div class="container">
+                <ul class="banners_cycle">
+                    <li class="banners_item style-1 ">
+                        <div class="tail">
+                            <div class="inner"><i class="fontawesome-icon medium circle-yes icon-globe"></i>
+                                <h4>Listen.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tin.</p>
+                                <a href="#" class="button">Read More</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="banners_item style-2 nomargin">
+                        <div class="tail">
+                            <div class="inner"><i class="fontawesome-icon medium circle-yes icon-lightbulb"></i>
+                                <h4>Analyze.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tin.</p>
+                                <a href="#" class="button">Read More</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="banners_item style-3 ">
+                        <div class="tail">
+                            <div class="inner"><i class="fontawesome-icon medium circle-yes icon-link"></i>
+                                <h4>Develop.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tin.</p>
+                                <a href="#" class="button">Read More</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="banners_item style-4 nomargin">
+                        <div class="tail">
+                            <div class="inner"><i class="fontawesome-icon medium circle-yes icon-hand-down"></i>
+                                <h4>Integrate.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tin.</p>
+                                <a href="#" class="button">Read More</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="banners_item style-5 ">
+                        <div class="tail">
+                            <div class="inner"><i class="fontawesome-icon medium circle-yes icon-upload-alt"></i>
+                                <h4>Grow.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tin.</p>
+                                <a href="#" class="button">Read More</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="banners_item style-6 nomargin">
+                        <div class="tail">
+                            <div class="inner"><i class="fontawesome-icon medium circle-yes icon-text-width"></i>
+                                <h4>Complete.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tin.</p>
+                                <a href="#" class="button">Read More</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            // initialise plugins
+            jQuery(function () {
+                // Banners button
+                jQuery('ul.banners_cycle li').mouseenter(function () {
+                    jQuery(this).find('.button').stop(false, true).fadeIn();
+                })
+                jQuery('ul.banners_cycle li').mouseleave(function () {
+                    jQuery(this).find('.button').stop(false, true).fadeOut();
+                });
+        
+                // Banners
+                jQuery('ul.banners_cycle li:not(.style-1)').mouseenter(function () {
+                    jQuery(this).css('z-index', '6');
+                    jQuery(this).stop(false, true).animate({ right: '-64px' }, { easing: "swing", duration: 300 });
+                    jQuery(this).animate({ right: '0' });
+                });
+                jQuery('ul.banners_cycle li:not(.style-1)').mouseleave(function () {
+                    jQuery(this).stop(false, true).animate({ right: '-64px' });
+                    jQuery(this).stop(false, true).animate({ right: '0' }, 'slow');
+                });
+        
+                // Banner #2
+                jQuery('ul.banners_cycle li.style-2').mouseleave(function () {
+                    jQuery(this).css('z-index', '5');
+                });
+                // Banner #3
+                jQuery('ul.banners_cycle li.style-3').mouseleave(function () {
+                    jQuery(this).css('z-index', '4');
+                });
+                // Banner #4
+                jQuery('ul.banners_cycle li.style-4').mouseleave(function () {
+                    jQuery(this).css('z-index', '3');
+                });
+                // Banner #5
+                jQuery('ul.banners_cycle li.style-5').mouseleave(function () {
+                    jQuery(this).css('z-index', '2');
+                });
+                // Banner #6
+                jQuery('ul.banners_cycle li.style-6').mouseenter(function () {
+                    jQuery('body').css('overflow-x', 'hidden');
+                });
+                jQuery('ul.banners_cycle li.style-6').mouseleave(function () {
+                    jQuery(this).css('z-index', '1');
+                    jQuery('body').css('overflow-x', 'hidden');
+                });
+            });
+        </script>
+    </body>
+</html>
